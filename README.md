@@ -93,3 +93,7 @@ Notes
   | Infrastructure Services | Editor | Required for starting and stopping VSI's |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+# Note
+
+This module requires terraform version v0.14 and above as the module uses the latest features available as part of terraform v0.14

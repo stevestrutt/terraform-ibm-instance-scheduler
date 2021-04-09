@@ -31,4 +31,4 @@ terraform apply -var-file="input.tfvars"
 
 ## Note
 
-For all optional fields, default values (Eg: `null`) are given in varaible.tf file. User can configure the same by overwriting with appropriate values.
+This module requires terraform version v0.14 and above as the module uses the latest features available as part of terraform v0.14
