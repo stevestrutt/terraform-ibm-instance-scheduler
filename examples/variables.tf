@@ -6,6 +6,7 @@ variable "ibmcloud_api_key" {
 variable "resource_group" {
   description = "Resource group name"
   type        = string
+  default     = "default"
 }
 
 variable "inventories" {
@@ -13,6 +14,13 @@ variable "inventories" {
   type = map(object({
     instance_ip_list = list(string)
   }))
+  default = {
+    dev = {
+        instance_ip_list = [
+            "10.240.64.4"
+        ]
+    }
+  }
 }
 
 variable "schedules" {
@@ -25,4 +33,20 @@ variable "schedules" {
       }
     )
   )
+  default = {
+
+    dev_7am_start_everyday = {
+        cron = "0 7 * * *"
+        action = "start"
+        env = "dev"
+        enabled = true
+    }
+
+    dev_11pm_stop_everyday = {
+        cron = "0 23 * * *"
+        action = "stop"
+        env = "dev"
+        enabled = true
+    }
+  }
 }

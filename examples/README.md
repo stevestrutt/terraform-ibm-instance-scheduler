@@ -25,10 +25,20 @@ Notes
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-## Usage
+## Usage - Command Line
 
 terraform apply -var-file="input.tfvars"
 
+## Usage - IBM Cloud Schematics Console
+
+* Create a schematics workspace
+* In the `Import your Terraform template` page, Enter the repo URL of this example https://github.com/Cloud-Schematics/terraform-ibm-instance-scheduler/tree/master/examples
+* Select Terraform version as terraform_v0.14
+* Save template information
+* Set the API Key
+* Override the input variables as per your requirements and ensure you enter the values in `HCL2` format (The same format used in tfvars variables)
+* Generate / Apply Plan 
+
 ## Note
 
-For all optional fields, default values (Eg: `null`) are given in varaible.tf file. User can configure the same by overwriting with appropriate values.
+This module requires terraform version v0.14 and above as the module uses the latest features available as part of terraform v0.14
